@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.36518.9 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageWrapperMediatR", "MessageWrapperMediatR\MessageWrapperMediatR.csproj", "{C7041182-ADC3-4DE6-80E7-28B70265E67F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageWrapperMediatR.Domain", "MessageWrapperMediatR.Domain\MessageWrapperMediatR.Domain.csproj", "{FF5FD6EC-9728-44F7-9EF8-2DF4EE869EF8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C7041182-ADC3-4DE6-80E7-28B70265E67F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7041182-ADC3-4DE6-80E7-28B70265E67F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7041182-ADC3-4DE6-80E7-28B70265E67F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF5FD6EC-9728-44F7-9EF8-2DF4EE869EF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF5FD6EC-9728-44F7-9EF8-2DF4EE869EF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF5FD6EC-9728-44F7-9EF8-2DF4EE869EF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF5FD6EC-9728-44F7-9EF8-2DF4EE869EF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
