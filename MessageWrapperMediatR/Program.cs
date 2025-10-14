@@ -1,6 +1,18 @@
+using System.Net;
+using Microsoft.AspNetCore.OpenApi;
 using System.Text.Json.Serialization;
 
-var builder = WebApplication.CreateSlimBuilder(args);
+//var otherBuilder = Host.CreateDefaultBuilder(args).ConfigureWebHostDefaults(web =>
+//{
+//    web.UseStartup<Startup>()
+//    .UseDefaultServiceProvider(o => o.ValidateScopes = false);
+//});
+var builder = WebApplication.CreateBuilder(args);
+
+// Use Swagger and OpenApi.
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 
 builder.Services.ConfigureHttpJsonOptions(options =>
 {
@@ -8,6 +20,11 @@ builder.Services.ConfigureHttpJsonOptions(options =>
 });
 
 var app = builder.Build();
+
+// User Swagger and Swashbuckle.
+app.UseSwagger();
+app.UseSwaggerUI();
+
 
 var sampleTodos = new Todo[] {
     new(1, "Walk the dog"),
@@ -18,11 +35,13 @@ var sampleTodos = new Todo[] {
 };
 
 var todosApi = app.MapGroup("/todos");
-todosApi.MapGet("/", () => sampleTodos);
+todosApi.MapGet("/", () => sampleTodos)
+    .WithOpenApi();
 todosApi.MapGet("/{id}", (int id) =>
     sampleTodos.FirstOrDefault(a => a.Id == id) is { } todo
         ? Results.Ok(todo)
-        : Results.NotFound());
+        : Results.NotFound())
+    .WithOpenApi();
 
 app.Run();
 
