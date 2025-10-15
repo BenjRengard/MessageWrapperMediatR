@@ -2,7 +2,7 @@
 
 namespace MessageWrapperMediatR.Infrastructure.RabbitMq.Publisher
 {
-    public interface IRabbitMqPublisherService
+    public interface IRabbitMqPublisher
     {
         Task<PublisherResult> PublishMessageAsync<T>(PublisherMessageEnveloppeRabbitMq<T> message);
     }

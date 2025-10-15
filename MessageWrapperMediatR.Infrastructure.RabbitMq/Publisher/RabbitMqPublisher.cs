@@ -6,16 +6,16 @@ using System.Text;
 
 namespace MessageWrapperMediatR.Infrastructure.RabbitMq.Publisher
 {
-    public class RabbitMqPublisherService : IRabbitMqPublisherService
+    public class RabbitMqPublisher : IRabbitMqPublisher
     {
-        private readonly ILogger<RabbitMqPublisherService> _logger;
+        private readonly ILogger<RabbitMqPublisher> _logger;
         private readonly RabbitConfig _rabbitConfig;
         private readonly SemaphoreSlim _semaphoreGate = new(1);
         private readonly IRabbitAdministrationFactory _administrationFactory;
         private readonly IRabbitChannelPublishFactory _channelFactory;
 
-        public RabbitMqPublisherService(
-            ILogger<RabbitMqPublisherService> logger,
+        public RabbitMqPublisher(
+            ILogger<RabbitMqPublisher> logger,
             RabbitConfig rabbitConfig,
             IRabbitAdministrationFactory rabbitAdministrationFactory,
             IRabbitChannelPublishFactory rabbitChannelPublishFactory)
