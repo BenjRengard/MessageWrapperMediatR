@@ -19,6 +19,6 @@ namespace MessageWrapperMediatR.Domain.Factories
         /// <summary>
         /// Restart connections of all handlers.
         /// </summary>
-        void RestartConnectionsOfHandlers();
+        Task RestartConnectionsOfHandlersAsync();
     }
 }

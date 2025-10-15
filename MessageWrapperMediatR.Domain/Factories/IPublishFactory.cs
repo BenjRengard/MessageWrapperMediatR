@@ -5,7 +5,7 @@ namespace MessageWrapperMediatR.Domain.Factories
     /// <summary>
     /// Factory to publish message directly. 
     /// </summary>
-    public interface IPublisherFactory
+    public interface IPublishFactory
     {
         /// <summary>
         /// Publish a message into a message bus.

@@ -8,10 +8,11 @@ using System.Threading.Tasks;
 
 namespace MessageWrapperMediatR.Infrastructure.MessageBus.Publisher
 {
-    public class PublisherFactory : IPublisherFactory
+    public class PublishFactory : IPublishFactory
     {
         public async Task<bool> PublishMessageAsync(MessageBusEnum messageBus, string endpoint, string messageContentJson, string? routingKeyOptionnal = null)
         {
+            //TODO.
             return true;
         }
     }

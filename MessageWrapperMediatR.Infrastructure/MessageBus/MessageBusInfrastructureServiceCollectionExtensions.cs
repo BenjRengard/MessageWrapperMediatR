@@ -15,7 +15,7 @@ namespace MessageWrapperMediatR.Infrastructure.MessageBus
     {
         public static IServiceCollection AddMessageSystem(this IServiceCollection services/*, IConfiguration configuration*/)
         {
-                _ = services.AddSingleton<IPublisherFactory, PublisherFactory>();
+                _ = services.AddSingleton<IPublishFactory, PublishFactory>();
 
             return services;
         }

@@ -12,11 +12,11 @@ namespace MessageWrapperMediatR.Application.Publisher
 {
     public class DirectPublishMessageCommandHandler : IRequestHandler<DirectPublishMessageCommand, bool>
     {
-        private readonly IPublisherFactory _publisherFactory;
+        private readonly IPublishFactory _publisherFactory;
 
         private readonly IMapper _mapper;
 
-        public DirectPublishMessageCommandHandler(IPublisherFactory publisherFactory, IMapper mapper)
+        public DirectPublishMessageCommandHandler(IPublishFactory publisherFactory, IMapper mapper)
         {
             _publisherFactory = publisherFactory;
             _mapper = mapper;

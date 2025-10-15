@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageWrapperMediatR.Appli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageWrapperMediatR.Infrastructure", "MessageWrapperMediatR.Infrastructure\MessageWrapperMediatR.Infrastructure.csproj", "{4C235A40-924C-4E9F-BC5D-21354E800795}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageWrapperMediatR.Infrastructure.RabbitMq", "MessageWrapperMediatR.Infrastructure.RabbitMq\MessageWrapperMediatR.Infrastructure.RabbitMq.csproj", "{BDECCFFF-EB9E-4BE1-BB9F-40FE050874FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageWrapperMediatR.Infrastructure.Messaging", "MessageWrapperMediatR.Infrastructure.Messaging\MessageWrapperMediatR.Infrastructure.Messaging.csproj", "{AAAC1398-2945-4A43-8412-4AF83905170C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{4C235A40-924C-4E9F-BC5D-21354E800795}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C235A40-924C-4E9F-BC5D-21354E800795}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C235A40-924C-4E9F-BC5D-21354E800795}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDECCFFF-EB9E-4BE1-BB9F-40FE050874FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDECCFFF-EB9E-4BE1-BB9F-40FE050874FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDECCFFF-EB9E-4BE1-BB9F-40FE050874FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDECCFFF-EB9E-4BE1-BB9F-40FE050874FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAAC1398-2945-4A43-8412-4AF83905170C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAAC1398-2945-4A43-8412-4AF83905170C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAAC1398-2945-4A43-8412-4AF83905170C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAAC1398-2945-4A43-8412-4AF83905170C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
