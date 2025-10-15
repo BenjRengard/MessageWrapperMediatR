@@ -1,6 +1,8 @@
 using System.Net;
 using Microsoft.AspNetCore.OpenApi;
 using System.Text.Json.Serialization;
+using MessageWrapperMediatR.Application.Extensions;
+using MessageWrapperMediatR.Infrastructure.MessageBus;
 
 //var otherBuilder = Host.CreateDefaultBuilder(args).ConfigureWebHostDefaults(web =>
 //{
@@ -11,7 +13,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Use Swagger and OpenApi.
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.UseInlineDefinitionsForEnums();
+});
+builder.Services.AddControllers();
+builder.Services.AddMessagingWithMediatR();
+builder.Services.AddMessageSystem();
+builder.Services.AddMappers();
 
 
 builder.Services.ConfigureHttpJsonOptions(options =>
@@ -24,7 +33,7 @@ var app = builder.Build();
 // User Swagger and Swashbuckle.
 app.UseSwagger();
 app.UseSwaggerUI();
-
+app.MapControllers();
 
 var sampleTodos = new Todo[] {
     new(1, "Walk the dog"),

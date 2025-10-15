@@ -6,11 +6,18 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <InvariantGlobalization>true</InvariantGlobalization>
     <PublishAot>true</PublishAot>
+    <JsonSerializerIsReflectionEnabledByDefault>true</JsonSerializerIsReflectionEnabledByDefault>
+
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.20" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MessageWrapperMediatR.Application\MessageWrapperMediatR.Application.csproj" />
+    <ProjectReference Include="..\MessageWrapperMediatR.Infrastructure\MessageWrapperMediatR.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
