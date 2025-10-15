@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageWrapperMediatR.Infra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageWrapperMediatR.Infrastructure.Kafka", "MessageWrapperMediatR.Infrastructure.Kafka\MessageWrapperMediatR.Infrastructure.Kafka.csproj", "{36788591-0FB8-4B8E-833F-DEE4665E2F4F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageWrapperMediatR.Infrastructure.IbmMqSeries", "MessageWrapperMediatR.Infrastructure.IbmMqSeries\MessageWrapperMediatR.Infrastructure.IbmMqSeries.csproj", "{AD21962A-B883-4A34-BCD7-ADF411F58E88}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{36788591-0FB8-4B8E-833F-DEE4665E2F4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36788591-0FB8-4B8E-833F-DEE4665E2F4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36788591-0FB8-4B8E-833F-DEE4665E2F4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD21962A-B883-4A34-BCD7-ADF411F58E88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD21962A-B883-4A34-BCD7-ADF411F58E88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD21962A-B883-4A34-BCD7-ADF411F58E88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD21962A-B883-4A34-BCD7-ADF411F58E88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

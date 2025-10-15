@@ -1,6 +1,8 @@
 ﻿using MessageWrapperMediatR.Domain.Factories;
 using MessageWrapperMediatR.Domain.Interfaces;
 using MessageWrapperMediatR.Domain.Models;
+using MessageWrapperMediatR.Infrastructure.IbmMqSeries;
+using MessageWrapperMediatR.Infrastructure.IbmMqSeries.Receiver;
 using MessageWrapperMediatR.Infrastructure.Kafka;
 using MessageWrapperMediatR.Infrastructure.Kafka.Receiver;
 using MessageWrapperMediatR.Infrastructure.RabbitMq.Connections;
@@ -9,6 +11,7 @@ using Microsoft.Extensions.Logging;
 
 namespace MessageWrapperMediatR.Infrastructure.MessageBus.AutomaticHandlers
 {
+    ///<inheritdoc/>
     public class HandlerFactory : IHandlerFactory
     {
         private readonly IRabbitChannelReceiveFactory _rabbitChannelReceiveFactory;
@@ -28,6 +31,7 @@ namespace MessageWrapperMediatR.Infrastructure.MessageBus.AutomaticHandlers
             _mqSeriesConfig = mqSeriesConfig;
         }
 
+        ///<inheritdoc/>
         public IDynamicHandler CreateHandler(Handler handlerDefinition, Func<string, Task> executionMethod)
         {
             switch (handlerDefinition.BusType)
@@ -43,6 +47,7 @@ namespace MessageWrapperMediatR.Infrastructure.MessageBus.AutomaticHandlers
             }
         }
 
+        ///<inheritdoc/>
         public async Task RestartConnectionsOfHandlersAsync() => await _rabbitChannelReceiveFactory.RestartConnectionAsync();
 
         /// <summary>
