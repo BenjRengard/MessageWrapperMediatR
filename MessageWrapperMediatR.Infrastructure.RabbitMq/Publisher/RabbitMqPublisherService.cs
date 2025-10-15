@@ -6,7 +6,7 @@ using System.Text;
 
 namespace MessageWrapperMediatR.Infrastructure.RabbitMq.Publisher
 {
-    public class RabbitMqPublisherService
+    public class RabbitMqPublisherService : IRabbitMqPublisherService
     {
         private readonly ILogger<RabbitMqPublisherService> _logger;
         private readonly RabbitConfig _rabbitConfig;

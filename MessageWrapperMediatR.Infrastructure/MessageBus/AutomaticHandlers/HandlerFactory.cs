@@ -1,6 +1,8 @@
 ﻿using MessageWrapperMediatR.Domain.Factories;
 using MessageWrapperMediatR.Domain.Interfaces;
 using MessageWrapperMediatR.Domain.Models;
+using MessageWrapperMediatR.Infrastructure.Kafka;
+using MessageWrapperMediatR.Infrastructure.Kafka.Receiver;
 using MessageWrapperMediatR.Infrastructure.RabbitMq.Connections;
 using MessageWrapperMediatR.Infrastructure.RabbitMq.Receiver;
 using Microsoft.Extensions.Logging;
