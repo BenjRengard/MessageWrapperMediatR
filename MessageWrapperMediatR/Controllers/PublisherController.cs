@@ -44,12 +44,5 @@ namespace MessageWrapperMediatR.Controllers
             }
             return BadRequest();
         }
-
-        [HttpGet]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        public IActionResult Get()
-        {
-            return Ok("Coucou");
-        }
     }
 }
