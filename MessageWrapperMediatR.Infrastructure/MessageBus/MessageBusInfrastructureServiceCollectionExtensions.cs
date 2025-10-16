@@ -1,5 +1,7 @@
 ﻿using MessageWrapperMediatR.Domain.Factories;
+using MessageWrapperMediatR.Infrastructure.IbmMqSeries;
 using MessageWrapperMediatR.Infrastructure.MessageBus.Publisher;
+using MessageWrapperMediatR.Infrastructure.Messaging;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -13,9 +15,12 @@ namespace MessageWrapperMediatR.Infrastructure.MessageBus
 {
     public static class MessageBusInfrastructureServiceCollectionExtensions
     {
-        public static IServiceCollection AddMessageSystem(this IServiceCollection services/*, IConfiguration configuration*/)
+        public static IServiceCollection AddMessageSystem(this IServiceCollection services, IConfiguration configuration)
         {
-                _ = services.AddSingleton<IPublishFactory, PublishFactory>();
+            PublisherConfig publisherConfig = configuration.GetSection("PublisherConfig").Get<PublisherConfig>() ?? new PublisherConfig();
+            _ = services.AddSingleton(publisherConfig);
+            _ = services.AddSingleton<IPublishFactory, PublishFactory>();
+            _ = services.AddSingleton<IGenericMessagePublisher, GenericMessagePublisher>();
 
             return services;
         }

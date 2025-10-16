@@ -2,9 +2,9 @@
 {
     public class RabbitConfig
     {
-        public required string HostName { get; set; }
+        public string HostName { get; set; }
         public int Port { get; set; }
-        public required string VirtualHost { get; set; }
+        public string VirtualHost { get; set; }
         public bool SSlEnabled { get; set; }
         public string? SSlServerName { get; set; }
         public string? SSlCertPath { get; set; }
@@ -17,6 +17,6 @@
         /// <summary>
         /// Le nom de l'exchange pour publier les messages.
         /// </summary>
-        public required string ExchangeToPublishMsg { get; set; }
+        public string ExchangeToPublishMsg { get; set; }
     }
 }

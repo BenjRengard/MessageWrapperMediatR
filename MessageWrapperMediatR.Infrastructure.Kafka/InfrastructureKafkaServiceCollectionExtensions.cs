@@ -8,11 +8,9 @@ namespace MessageWrapperMediatR.Infrastructure.Kafka
     {
         public static IServiceCollection AddKafkaConfiguration(this IServiceCollection services, IConfiguration configuration)
         {
-            if (configuration.GetSection("KafkaConfig") is KafkaConfig kafkaConfig)
-            {
-                _ = services.AddSingleton(kafkaConfig);
-                _ = services.AddSingleton<IKafkaPublisher, KafkaPublisher>();
-            }
+            KafkaConfig kafkaConfig = configuration.GetSection("KafkaConfig").Get<KafkaConfig>() ?? new KafkaConfig();
+            _ = services.AddSingleton(kafkaConfig);
+            _ = services.AddSingleton<IKafkaPublisher, KafkaPublisher>();
             return services;
         }
     }

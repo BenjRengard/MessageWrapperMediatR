@@ -9,14 +9,12 @@ namespace MessageWrapperMediatR.Infrastructure.RabbitMq
     {
         public static IServiceCollection AddRabbitMqConfiguration(this IServiceCollection services, IConfiguration configuration)
         {
-            if (configuration.GetSection("RabbitConfig") is RabbitConfig rabbitConfig)
-            {
-                _ = services.AddSingleton(rabbitConfig);
-                _ = services.AddSingleton<IRabbitChannelReceiveFactory, RabbitChannelReceiveFactory>();
-                _ = services.AddSingleton<IRabbitAdministrationFactory, RabbitAdministrationFactory>();
-                _ = services.AddSingleton<IRabbitChannelPublishFactory, RabbitChannelPublishFactory>();
-                _ = services.AddSingleton<IRabbitMqPublisher, RabbitMqPublisher>();
-            }
+            RabbitConfig rabbitConfig = configuration.GetSection("RabbitConfig").Get<RabbitConfig>() ?? new RabbitConfig();
+            _ = services.AddSingleton(rabbitConfig);
+            _ = services.AddSingleton<IRabbitChannelReceiveFactory, RabbitChannelReceiveFactory>();
+            _ = services.AddSingleton<IRabbitAdministrationFactory, RabbitAdministrationFactory>();
+            _ = services.AddSingleton<IRabbitChannelPublishFactory, RabbitChannelPublishFactory>();
+            _ = services.AddSingleton<IRabbitMqPublisher, RabbitMqPublisher>();
 
             return services;
         }

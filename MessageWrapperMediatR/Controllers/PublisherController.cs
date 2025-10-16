@@ -38,7 +38,6 @@ namespace MessageWrapperMediatR.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> PublishAsync([FromBody] DirectPublishMessageCommand command)
         {
-            //DirectPublishMessageCommand command = new DirectPublishMessageCommand() { BusToPublish = Application.Contracts.MessageBusEnumContract.ibmmqseries};
             if (await _mediator.Send(command))
             {
                 return Ok();
