@@ -21,7 +21,7 @@ builder.Services.AddSwaggerGen(options =>
 });
 builder.Services.AddControllers();
 builder.Services.AddMessagingWithMediatR();
-builder.Services.AddMessageSystem(config);
+builder.Services.AddPublisherServices(config);
 builder.Services.AddRabbitMqConfiguration(config); 
 builder.Services.AddIbmMqSeriesConfiguration(config);
 builder.Services.AddKafkaConfiguration(config);

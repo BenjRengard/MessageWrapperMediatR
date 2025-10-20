@@ -9,7 +9,7 @@
         /// <summary>
         /// Id of an handler model.
         /// </summary>
-        public required string Id { get; set; }
+        public string Id { get; set; }
 
         /// <summary>
         /// Verify if the handler is active.
@@ -19,7 +19,7 @@
         /// <summary>
         /// Name of the flux who is readed.
         /// </summary>
-        public required string Queue { get; set; }
+        public string Queue { get; set; }
 
         /// <summary>
         /// How long the messages recevied need to be stored.
@@ -34,7 +34,7 @@
         /// <summary>
         /// Name of the associate MediatR Command which is automaticaly throw.
         /// </summary>
-        public required string AssociateCommand { get; set; }
+        public string AssociateCommand { get; set; }
 
         /// <summary>
         /// Verify if the handler is define in a permanent state in app parameters or if can be edited and deleted because only exists on DB.
@@ -50,6 +50,31 @@
         /// Asocciate Binding in a RabbitMq definition.
         /// </summary>
         public List<Binding> Bindings { get; set; } = [];
+
+        public Handler() { }
+
+        public Handler(Handler handler)
+        {
+            Id = handler.Id;
+            IsActive = handler.IsActive;
+            Queue = handler.Queue;
+            IsStored = handler.IsStored;
+            AssociateCommand = handler.AssociateCommand;
+            TimeToLiveInDays = handler.TimeToLiveInDays;
+            BusType = handler.BusType;
+            AddBindings(handler.Bindings);
+        }
+
+        public void ModifyHandler(Handler handler)
+        {
+            IsActive = handler.IsActive;
+            Queue = handler.Queue;
+            IsStored = handler.IsStored;
+            AssociateCommand = handler.AssociateCommand;
+            TimeToLiveInDays = handler.TimeToLiveInDays;
+            Bindings.Clear();
+            AddBindings(handler.Bindings);
+        }
 
         /// <summary>
         /// Add a associate binding into Handler.

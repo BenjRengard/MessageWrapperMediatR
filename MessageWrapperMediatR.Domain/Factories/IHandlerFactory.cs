@@ -13,7 +13,7 @@ namespace MessageWrapperMediatR.Domain.Factories
         /// </summary>
         /// <param name="handlerDefinition">Definition of handler.</param>
         /// <param name="executionMethod">Method who is executed when a message is received.</param>
-        /// <returns></returns>
+        /// <returns>A Dynamic Handler created.</returns>
         IDynamicHandler CreateHandler(Handler handlerDefinition, Func<string, Task> executionMethod);
 
         /// <summary>

@@ -2,11 +2,6 @@
 using MediatR;
 using MessageWrapperMediatR.Domain.Factories;
 using MessageWrapperMediatR.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MessageWrapperMediatR.Application.Publisher
 {
@@ -24,8 +19,8 @@ namespace MessageWrapperMediatR.Application.Publisher
 
         public async Task<bool> Handle(DirectPublishMessageCommand request, CancellationToken cancellationToken)
         {
-            //return await _publisherFactory.PublishMessageAsync(MessageBusEnum.rabbitmq, request.Endpoint, request.MessageContentJson, request.OptionnalRoutingKey);
-            return await _publisherFactory.PublishMessageAsync(_mapper.Map<MessageBusEnum>(request.BusToPublish), request.Endpoint, request.MessageContentJson, request.OptionnalRoutingKey);
+            return await _publisherFactory.PublishMessageAsync(
+                _mapper.Map<MessageBusEnum>(request.BusToPublish), request.Endpoint, request.MessageContentJson, request.OptionnalRoutingKey);
         }
     }
 }

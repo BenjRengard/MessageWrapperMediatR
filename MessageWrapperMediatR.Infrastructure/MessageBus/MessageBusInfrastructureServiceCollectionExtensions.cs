@@ -15,7 +15,7 @@ namespace MessageWrapperMediatR.Infrastructure.MessageBus
 {
     public static class MessageBusInfrastructureServiceCollectionExtensions
     {
-        public static IServiceCollection AddMessageSystem(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddPublisherServices(this IServiceCollection services, IConfiguration configuration)
         {
             PublisherConfig publisherConfig = configuration.GetSection("PublisherConfig").Get<PublisherConfig>() ?? new PublisherConfig();
             _ = services.AddSingleton(publisherConfig);

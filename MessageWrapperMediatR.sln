@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageWrapperMediatR.Infra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageWrapperMediatR.Infrastructure.IbmMqSeries", "MessageWrapperMediatR.Infrastructure.IbmMqSeries\MessageWrapperMediatR.Infrastructure.IbmMqSeries.csproj", "{AD21962A-B883-4A34-BCD7-ADF411F58E88}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageWrapperMediatR.Infrastructure.SqlServer", "MessageWrapperMediatR.Infrastructure.SqlServer\MessageWrapperMediatR.Infrastructure.SqlServer.csproj", "{C394B487-2164-4F10-88AB-6325CD6DC0AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{AD21962A-B883-4A34-BCD7-ADF411F58E88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD21962A-B883-4A34-BCD7-ADF411F58E88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD21962A-B883-4A34-BCD7-ADF411F58E88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C394B487-2164-4F10-88AB-6325CD6DC0AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C394B487-2164-4F10-88AB-6325CD6DC0AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C394B487-2164-4F10-88AB-6325CD6DC0AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C394B487-2164-4F10-88AB-6325CD6DC0AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
