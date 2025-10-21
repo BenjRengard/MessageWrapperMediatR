@@ -19,7 +19,7 @@ namespace MessageWrapperMediatR.Infrastructure.SqlServer.Configurations
             _ = builder.Property(e => e.AssociateCommand).HasMaxLength(80);
             _ = builder.Property(e => e.Id).HasMaxLength(100);
             _ = builder.Property(e => e.TimeToLiveInDays).HasDefaultValue(7).IsRequired();
-            _ = builder.Property(e => e.IsStored).HasDefaultValue(true);
+            _ = builder.Property(e => e.MessageIsStored).HasDefaultValue(true);
             _ = builder.Ignore(e => e.IsPermanent);
             _ = builder.HasMany(h => h.Bindings).WithOne(b => b.Handler).HasForeignKey(b => b.HandlerId).OnDelete(DeleteBehavior.Cascade);
         }

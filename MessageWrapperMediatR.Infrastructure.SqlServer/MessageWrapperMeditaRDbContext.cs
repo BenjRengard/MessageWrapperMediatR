@@ -1,12 +1,5 @@
 ﻿using MessageWrapperMediatR.Domain.Models;
-using MessageWrapperMediatR.Infrastructure.SqlServer.Configurations;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MessageWrapperMediatR.Infrastructure.SqlServer
 {
@@ -14,7 +7,7 @@ namespace MessageWrapperMediatR.Infrastructure.SqlServer
     {
         internal const string SchemaName = "MessageWrapperMeditaR";
 
-        public DbSet<MessageCollector> MessagesCollector { get; set; }
+        public DbSet<CollectedMessage> CollectedMessages { get; set; }
 
         public DbSet<Handler> Handlers { get; set; }
         public DbSet<Binding> Bindings { get; set; }

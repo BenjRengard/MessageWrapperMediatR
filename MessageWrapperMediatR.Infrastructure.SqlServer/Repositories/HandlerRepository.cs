@@ -75,8 +75,8 @@ namespace MessageWrapperMediatR.Infrastructure.SqlServer.Repositories
             }
             else
             {
-                handler = new Handler(handlerRequest);
-                _ = await dbContext.Handlers.AddAsync(handler);
+                //handler = new Handler(handlerRequest);
+                _ = await dbContext.Handlers.AddAsync(handlerRequest);
             }
             _ = await dbContext.SaveChangesAsync();
             return handler;

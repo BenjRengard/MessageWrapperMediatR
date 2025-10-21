@@ -29,7 +29,7 @@
         /// <summary>
         /// Verify if the messages received are stored.
         /// </summary>
-        public bool IsStored { get; set; }
+        public bool MessageIsStored { get; set; }
 
         /// <summary>
         /// Name of the associate MediatR Command which is automaticaly throw.
@@ -51,25 +51,36 @@
         /// </summary>
         public List<Binding> Bindings { get; set; } = [];
 
+        /// <summary>
+        /// Constructor by default.
+        /// </summary>
         public Handler() { }
 
+        /// <summary>
+        /// Constructor from another Handler.
+        /// </summary>
+        /// <param name="handler"></param>
         public Handler(Handler handler)
         {
             Id = handler.Id;
             IsActive = handler.IsActive;
             Queue = handler.Queue;
-            IsStored = handler.IsStored;
+            MessageIsStored = handler.MessageIsStored;
             AssociateCommand = handler.AssociateCommand;
             TimeToLiveInDays = handler.TimeToLiveInDays;
             BusType = handler.BusType;
             AddBindings(handler.Bindings);
         }
 
+        /// <summary>
+        /// Modify the handler
+        /// </summary>
+        /// <param name="handler">Handler from.</param>
         public void ModifyHandler(Handler handler)
         {
             IsActive = handler.IsActive;
             Queue = handler.Queue;
-            IsStored = handler.IsStored;
+            MessageIsStored = handler.MessageIsStored;
             AssociateCommand = handler.AssociateCommand;
             TimeToLiveInDays = handler.TimeToLiveInDays;
             Bindings.Clear();
