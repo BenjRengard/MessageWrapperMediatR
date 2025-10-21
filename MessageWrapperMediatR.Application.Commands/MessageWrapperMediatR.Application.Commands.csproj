@@ -8,7 +8,14 @@
 
   <ItemGroup>
     <Folder Include="Handlers\" />
-    <Folder Include="MessageCollector\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="13.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MessageWrapperMediatR.Domain\MessageWrapperMediatR.Core.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-﻿using MessageWrapperMediatR.Domain.Factories;
+﻿using MessageWrapperMediatR.Core.Factories;
 using MessageWrapperMediatR.Infrastructure.IbmMqSeries;
 using MessageWrapperMediatR.Infrastructure.MessageBus.Publisher;
 using MessageWrapperMediatR.Infrastructure.Messaging;

@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
-using MessageWrapperMediatR.Domain.Factories;
-using MessageWrapperMediatR.Domain.Models;
+using MessageWrapperMediatR.Core.Factories;
+using MessageWrapperMediatR.Core.Models;
 
 namespace MessageWrapperMediatR.Application.Publisher
 {

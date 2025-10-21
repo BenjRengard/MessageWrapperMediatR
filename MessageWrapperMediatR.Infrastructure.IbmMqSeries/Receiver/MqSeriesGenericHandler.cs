@@ -1,5 +1,5 @@
-﻿using MessageWrapperMediatR.Domain.Interfaces;
-using MessageWrapperMediatR.Domain.Models;
+﻿using MessageWrapperMediatR.Core.Interfaces;
+using MessageWrapperMediatR.Core.Models;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
@@ -28,7 +28,7 @@ namespace MessageWrapperMediatR.Infrastructure.IbmMqSeries.Receiver
         public bool IsActive { get; private set; }
 
         ///<inheritdoc/>
-        public string HandlerKey => _handlerModel?.Id;
+        public string Id => _handlerModel?.Id;
 
         ///<inheritdoc/>
         public string QueueFrom => _handlerModel?.Queue;

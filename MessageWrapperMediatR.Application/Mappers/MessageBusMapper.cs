@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using MessageWrapperMediatR.Application.Contracts;
-using MessageWrapperMediatR.Domain.Models;
+using MessageWrapperMediatR.Core.Models;
 
 namespace MessageWrapperMediatR.Application.Mappers
 {

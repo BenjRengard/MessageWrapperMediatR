@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MessageWrapperMediatR.Application\MessageWrapperMediatR.Application.csproj" />
-    <ProjectReference Include="..\MessageWrapperMediatR.Domain\MessageWrapperMediatR.Domain.csproj" />
+    <ProjectReference Include="..\MessageWrapperMediatR.Domain\MessageWrapperMediatR.Core.csproj" />
     <ProjectReference Include="..\MessageWrapperMediatR.Infrastructure.IbmMqSeries\MessageWrapperMediatR.Infrastructure.IbmMqSeries.csproj" />
     <ProjectReference Include="..\MessageWrapperMediatR.Infrastructure.Kafka\MessageWrapperMediatR.Infrastructure.Kafka.csproj" />
     <ProjectReference Include="..\MessageWrapperMediatR.Infrastructure.RabbitMq\MessageWrapperMediatR.Infrastructure.RabbitMq.csproj" />

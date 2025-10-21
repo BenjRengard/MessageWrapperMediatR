@@ -1,6 +1,6 @@
-﻿using MessageWrapperMediatR.Domain.Models;
+﻿using MessageWrapperMediatR.Core.Models;
 
-namespace MessageWrapperMediatR.Domain.Repositories
+namespace MessageWrapperMediatR.Core.Repositories
 {
     /// <summary>
     /// Repository of handlers.

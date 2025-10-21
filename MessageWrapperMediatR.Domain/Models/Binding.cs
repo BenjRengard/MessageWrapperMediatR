@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MessageWrapperMediatR.Domain.Models
+﻿namespace MessageWrapperMediatR.Core.Models
 {
     /// <summary>
     /// A Binding is a class who represents the definition of bind between flux and action.

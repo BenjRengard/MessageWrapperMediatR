@@ -1,6 +1,6 @@
-﻿using MessageWrapperMediatR.Domain.Filters;
-using MessageWrapperMediatR.Domain.Models;
-using MessageWrapperMediatR.Domain.Repositories;
+﻿using MessageWrapperMediatR.Core.Filters;
+using MessageWrapperMediatR.Core.Models;
+using MessageWrapperMediatR.Core.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;

@@ -1,6 +1,6 @@
-﻿using MessageWrapperMediatR.Domain.Models;
+﻿using MessageWrapperMediatR.Core.Models;
 
-namespace MessageWrapperMediatR.Domain.Factories
+namespace MessageWrapperMediatR.Core.Factories
 {
     /// <summary>
     /// Factory to publish message directly. 

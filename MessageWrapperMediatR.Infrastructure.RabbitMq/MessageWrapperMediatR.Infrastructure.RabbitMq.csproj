@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MessageWrapperMediatR.Domain\MessageWrapperMediatR.Domain.csproj" />
+    <ProjectReference Include="..\MessageWrapperMediatR.Domain\MessageWrapperMediatR.Core.csproj" />
     <ProjectReference Include="..\MessageWrapperMediatR.Infrastructure.Messaging\MessageWrapperMediatR.Infrastructure.Messaging.csproj" />
   </ItemGroup>
 

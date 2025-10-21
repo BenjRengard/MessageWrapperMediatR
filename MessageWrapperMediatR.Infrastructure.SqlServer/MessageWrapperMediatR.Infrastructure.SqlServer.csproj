@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MessageWrapperMediatR.Domain\MessageWrapperMediatR.Domain.csproj" />
+    <ProjectReference Include="..\MessageWrapperMediatR.Domain\MessageWrapperMediatR.Core.csproj" />
   </ItemGroup>
 
 </Project>

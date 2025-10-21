@@ -1,4 +1,4 @@
-﻿using MessageWrapperMediatR.Domain.Models;
+﻿using MessageWrapperMediatR.Core.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace MessageWrapperMediatR.Infrastructure.SqlServer

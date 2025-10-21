@@ -1,5 +1,5 @@
-﻿using MessageWrapperMediatR.Domain.Factories;
-using MessageWrapperMediatR.Domain.Models;
+﻿using MessageWrapperMediatR.Core.Factories;
+using MessageWrapperMediatR.Core.Models;
 using MessageWrapperMediatR.Infrastructure.Messaging;
 using Microsoft.Extensions.Logging;
 

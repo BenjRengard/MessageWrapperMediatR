@@ -1,5 +1,5 @@
-﻿using MessageWrapperMediatR.Domain.Interfaces;
-using MessageWrapperMediatR.Domain.Models;
+﻿using MessageWrapperMediatR.Core.Interfaces;
+using MessageWrapperMediatR.Core.Models;
 using MessageWrapperMediatR.Infrastructure.RabbitMq.Connections;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -26,7 +26,7 @@ namespace MessageWrapperMediatR.Infrastructure.RabbitMq.Receiver
         public bool IsActive { get; private set; }
 
         ///<inheritdoc/>
-        public string HandlerKey => _handlerModel.Id;
+        public string Id => _handlerModel.Id;
 
         ///<inheritdoc/>
         public string QueueFrom => _handlerModel.Queue;
@@ -68,7 +68,7 @@ namespace MessageWrapperMediatR.Infrastructure.RabbitMq.Receiver
         {
             _logger.LogInformation("{name} - Is stopping", _handlerModel.Id);
             this.IsActive = false;
-            await _channelFactory.CancelConsumptionAsync(this.HandlerKey);
+            await _channelFactory.CancelConsumptionAsync(this.Id);
             await base.StopAsync(cancellationToken);
         }
 
@@ -87,7 +87,7 @@ namespace MessageWrapperMediatR.Infrastructure.RabbitMq.Receiver
                                                                      .ToList();
                 try
                 {
-                    await _channelFactory.RegisterConsumptionAsync(this.HandlerKey, _handlerModel.Queue, _executionMethod, bindings, cancellationToken);
+                    await _channelFactory.RegisterConsumptionAsync(this.Id, _handlerModel.Queue, _executionMethod, bindings, cancellationToken);
                     this.IsActive = true;
                     await base.StartAsync(cancellationToken);
                 }

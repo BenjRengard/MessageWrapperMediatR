@@ -1,4 +1,4 @@
-﻿namespace MessageWrapperMediatR.Domain.Filters
+﻿namespace MessageWrapperMediatR.Core.Filters
 {
     public class PaginatedResponse<T>
     {

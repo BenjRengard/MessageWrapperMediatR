@@ -1,4 +1,4 @@
-﻿using MessageWrapperMediatR.Domain.Models;
+﻿using MessageWrapperMediatR.Core.Models;
 using MessageWrapperMediatR.Infrastructure.IbmMqSeries.Publisher;
 using MessageWrapperMediatR.Infrastructure.Kafka.Publisher;
 using MessageWrapperMediatR.Infrastructure.Messaging;

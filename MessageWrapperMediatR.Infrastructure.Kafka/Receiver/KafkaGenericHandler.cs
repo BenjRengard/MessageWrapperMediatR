@@ -1,6 +1,6 @@
 ﻿using Confluent.Kafka;
-using MessageWrapperMediatR.Domain.Interfaces;
-using MessageWrapperMediatR.Domain.Models;
+using MessageWrapperMediatR.Core.Interfaces;
+using MessageWrapperMediatR.Core.Models;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Polly;
@@ -26,7 +26,7 @@ namespace MessageWrapperMediatR.Infrastructure.Kafka.Receiver
         public bool IsActive { get; private set; }
 
         ///<inheritdoc/>
-        public string HandlerKey => _handlerModel.Id;
+        public string Id => _handlerModel.Id;
 
         ///<inheritdoc/>
         public string QueueFrom => _handlerModel.Queue;
@@ -60,7 +60,7 @@ namespace MessageWrapperMediatR.Infrastructure.Kafka.Receiver
         /// <returns></returns>
         public override async Task StopAsync(CancellationToken cancellationToken)
         {
-            _logger.LogInformation("MessageEventHandler {topic} - Is stopping", this.HandlerKey);
+            _logger.LogInformation("MessageEventHandler {topic} - Is stopping", this.Id);
             this.IsActive = false;
             await base.StopAsync(cancellationToken);
         }
@@ -74,7 +74,7 @@ namespace MessageWrapperMediatR.Infrastructure.Kafka.Receiver
         {
             if (!this.IsActive && _kafkaConfig?.Consumer != null)
             {
-                _logger.LogInformation("MessageEventHandler {topic} - Is starting", this.HandlerKey);
+                _logger.LogInformation("MessageEventHandler {topic} - Is starting", this.Id);
                 this.IsActive = true;
                 await base.StartAsync(cancellationToken);
             }
@@ -102,13 +102,13 @@ namespace MessageWrapperMediatR.Infrastructure.Kafka.Receiver
         {
             if (_kafkaConfig?.Consumer != null)
             {
-                _logger.LogInformation("MessageEventHandler {topic} - Is starting", this.HandlerKey);
+                _logger.LogInformation("MessageEventHandler {topic} - Is starting", this.Id);
                 _ = Task.Run(async () =>
                 {
                     while (this.IsActive)
                     {
                         await this.StartAsync();
-                        _logger.LogInformation("Re start of Kafka consummer for {topic}", this.HandlerKey);
+                        _logger.LogInformation("Re start of Kafka consummer for {topic}", this.Id);
                     }
                 }, stoppingToken);
             }
@@ -150,7 +150,7 @@ namespace MessageWrapperMediatR.Infrastructure.Kafka.Receiver
             {
                 using IConsumer<string, byte[]> consumer = new ConsumerBuilder<string, byte[]>(consumerConfig).Build();
                 consumer.Subscribe(this.QueueFrom);
-                _logger.LogInformation("Kafka handler for topic {topic} running", this.HandlerKey);
+                _logger.LogInformation("Kafka handler for topic {topic} running", this.Id);
                 _logger.LogInformation("Consumer configuration - Servers: {servers} | Topics: {topic} | GroupId: {groupId}",
                 consumerConfig.BootstrapServers, this.QueueFrom, _kafkaConfig.Consumer.GroupId);
                 bool isError = false;

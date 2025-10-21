@@ -1,6 +1,6 @@
-﻿using MessageWrapperMediatR.Domain.Factories;
-using MessageWrapperMediatR.Domain.Interfaces;
-using MessageWrapperMediatR.Domain.Models;
+﻿using MessageWrapperMediatR.Core.Factories;
+using MessageWrapperMediatR.Core.Interfaces;
+using MessageWrapperMediatR.Core.Models;
 using MessageWrapperMediatR.Infrastructure.IbmMqSeries;
 using MessageWrapperMediatR.Infrastructure.IbmMqSeries.Receiver;
 using MessageWrapperMediatR.Infrastructure.Kafka;

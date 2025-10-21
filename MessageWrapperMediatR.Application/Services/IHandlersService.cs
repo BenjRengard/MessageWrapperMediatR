@@ -1,4 +1,6 @@
-﻿using MessageWrapperMediatR.Application.Contracts;
+﻿using MessageWrapperMediatR.Core.Filters;
+using MessageWrapperMediatR.Core.Models;
+using MessageWrapperMediatR.Domain.Contracts;
 
 namespace MessageWrapperMediatR.Application.Services
 {
@@ -30,13 +32,13 @@ namespace MessageWrapperMediatR.Application.Services
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        HandlerContract GetHandlerStatus(string key);
+        Handler GetHandlerStatus(string key);
 
         /// <summary>
         /// Get all handers status.
         /// </summary>
         /// <returns></returns>
-        Task<PaginatedResponseContract<HandlerContract>> GetHandlerStatus(PagingFilterContract pagingFilter = null);
+        Task<PaginatedResponse<Handler>> GetHandlerStatus(PagingFilter pagingFilter = null);
 
         /// <summary>
         /// Restart handler.
@@ -76,7 +78,7 @@ namespace MessageWrapperMediatR.Application.Services
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        Task<HandlerContract> AddOrUpdateHandlerAsync(HandlerContract request);
+        Task<Handler> AddOrUpdateHandlerAsync(Handler request);
 
         /// <summary>
         /// Remove handler in registration. Close it, suppress it on the registration, and in storage.

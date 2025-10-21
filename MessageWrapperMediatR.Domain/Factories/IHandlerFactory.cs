@@ -1,7 +1,7 @@
-﻿using MessageWrapperMediatR.Domain.Interfaces;
-using MessageWrapperMediatR.Domain.Models;
+﻿using MessageWrapperMediatR.Core.Interfaces;
+using MessageWrapperMediatR.Core.Models;
 
-namespace MessageWrapperMediatR.Domain.Factories
+namespace MessageWrapperMediatR.Core.Factories
 {
     /// <summary>
     /// Factory of handlers.

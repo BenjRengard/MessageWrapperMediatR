@@ -1,4 +1,4 @@
-﻿namespace MessageWrapperMediatR.Domain.Models
+﻿namespace MessageWrapperMediatR.Core.Models
 {
     /// <summary>
     /// Definition of a model of Handler. 
@@ -95,8 +95,8 @@
         {
             if (binding != null)
             {
-                binding.HandlerId = this.Id;
-                this.Bindings.Add(binding);
+                binding.HandlerId = Id;
+                Bindings.Add(binding);
             }
         }
 
@@ -110,7 +110,7 @@
             {
                 foreach (Binding binding in bindings)
                 {
-                    this.AddBinding(binding);
+                    AddBinding(binding);
                 }
             }
         }

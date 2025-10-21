@@ -1,6 +1,6 @@
-﻿using MessageWrapperMediatR.Domain.Models;
+﻿using MessageWrapperMediatR.Core.Models;
 
-namespace MessageWrapperMediatR.Domain.Interfaces
+namespace MessageWrapperMediatR.Core.Interfaces
 {
     /// <summary>
     /// Definition of a Dynamic Handler.
@@ -35,7 +35,7 @@ namespace MessageWrapperMediatR.Domain.Interfaces
         /// <summary>
         /// the key of handler.
         /// </summary>
-        string HandlerKey { get; }
+        string Id { get; }
 
         /// <summary>
         /// Queue.

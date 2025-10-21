@@ -1,5 +1,5 @@
-﻿using MessageWrapperMediatR.Domain.Models;
-using MessageWrapperMediatR.Domain.Repositories;
+﻿using MessageWrapperMediatR.Core.Models;
+using MessageWrapperMediatR.Core.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 

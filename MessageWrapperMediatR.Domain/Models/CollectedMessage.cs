@@ -1,4 +1,4 @@
-﻿namespace MessageWrapperMediatR.Domain.Models
+﻿namespace MessageWrapperMediatR.Core.Models
 {
     /// <summary>
     /// Collected message from the message Wrapper.

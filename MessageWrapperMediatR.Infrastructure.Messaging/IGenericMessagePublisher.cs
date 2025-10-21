@@ -1,4 +1,4 @@
-﻿using MessageWrapperMediatR.Domain.Models;
+﻿using MessageWrapperMediatR.Core.Models;
 
 namespace MessageWrapperMediatR.Infrastructure.Messaging
 {

@@ -1,4 +1,4 @@
-﻿namespace MessageWrapperMediatR.Domain.Models
+﻿namespace MessageWrapperMediatR.Core.Models
 {
     /// <summary>
     /// Enumerable of supported message brokers.
