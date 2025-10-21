@@ -1,4 +1,4 @@
-﻿namespace MessageWrapperMediatR.Application.Attributes
+﻿namespace MessageWrapperMediatR.Application.Contracts.Attributes
 {
     [AttributeUsage(AttributeTargets.Property)]
     public class DeserializePropertyAttribute : Attribute

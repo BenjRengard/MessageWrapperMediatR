@@ -12,6 +12,7 @@
     <ProjectReference Include="..\MessageWrapperMediatR.Infrastructure.IbmMqSeries\MessageWrapperMediatR.Infrastructure.IbmMqSeries.csproj" />
     <ProjectReference Include="..\MessageWrapperMediatR.Infrastructure.Kafka\MessageWrapperMediatR.Infrastructure.Kafka.csproj" />
     <ProjectReference Include="..\MessageWrapperMediatR.Infrastructure.RabbitMq\MessageWrapperMediatR.Infrastructure.RabbitMq.csproj" />
+    <ProjectReference Include="..\MessageWrapperMediatR.Infrastructure.SqlServer\MessageWrapperMediatR.Infrastructure.SqlServer.csproj" />
   </ItemGroup>
 
 </Project>
