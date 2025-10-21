@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using MessageWrapperMediatR.Application.Contracts;
 using MessageWrapperMediatR.Domain.Contracts;
 
 namespace MessageWrapperMediatR.Application.Commands

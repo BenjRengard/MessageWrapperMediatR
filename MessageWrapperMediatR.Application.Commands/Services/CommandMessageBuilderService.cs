@@ -1,5 +1,4 @@
-﻿using MessageWrapperMediatR.Application.Contracts;
-using MessageWrapperMediatR.Application.Contracts.Attributes;
+﻿using MessageWrapperMediatR.Core.Config;
 using MessageWrapperMediatR.Domain.Attributes;
 using MessageWrapperMediatR.Domain.Contracts;
 using Microsoft.Extensions.Logging;

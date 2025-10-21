@@ -1,12 +1,11 @@
 ﻿using MediatR;
-using MessageWrapperMediatR.Application.Contracts;
-using System.Text.Json.Serialization;
+using MessageWrapperMediatR.Core.Models;
 
 namespace MessageWrapperMediatR.Application.Publisher
 {
     public class DirectPublishMessageCommand : IRequest<bool>
     {
-        public MessageBusEnumContract BusToPublish { get; set; }
+        public MessageBusEnum BusToPublish { get; set; }
 
         public string Endpoint { get; set; }
 
