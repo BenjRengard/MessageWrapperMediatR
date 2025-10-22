@@ -1,4 +1,5 @@
 ﻿using MessageWrapperMediatR.Core.Models;
+using MessageWrapperMediatR.Infrastructure.SqlServer.Configurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace MessageWrapperMediatR.Infrastructure.SqlServer
@@ -8,7 +9,6 @@ namespace MessageWrapperMediatR.Infrastructure.SqlServer
         internal const string SchemaName = "MessageWrapperMeditaR";
 
         public DbSet<CollectedMessage> CollectedMessages { get; set; }
-
         public DbSet<Handler> Handlers { get; set; }
         public DbSet<Binding> Bindings { get; set; }
 
@@ -20,7 +20,7 @@ namespace MessageWrapperMediatR.Infrastructure.SqlServer
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            _ = modelBuilder.ApplyConfigurationsFromAssembly(typeof(MessageWrapperMeditaRDbContext).Assembly);
+            _ = modelBuilder.ApplyConfigurationsFromAssembly(typeof(BindingDbConfiguration).Assembly);
             _ = modelBuilder.HasDefaultSchema(SchemaName);
             base.OnModelCreating(modelBuilder);
         }

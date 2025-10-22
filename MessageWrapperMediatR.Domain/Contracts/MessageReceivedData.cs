@@ -1,6 +1,6 @@
 ﻿using MessageWrapperMediatR.Core.Models;
 
-namespace MessageWrapperMediatR.Domain.Contracts
+namespace MessageWrapperMediatR.Core.Contracts
 {
     public class MessageReceivedData
     {

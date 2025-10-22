@@ -1,12 +1,13 @@
 ﻿using AutoMapper;
 using MediatR;
 using MessageWrapperMediatR.Application.Commands.MessageCollector;
+using MessageWrapperMediatR.Core.Config;
+using MessageWrapperMediatR.Core.Contracts;
 using MessageWrapperMediatR.Core.Factories;
 using MessageWrapperMediatR.Core.Filters;
 using MessageWrapperMediatR.Core.Interfaces;
 using MessageWrapperMediatR.Core.Models;
 using MessageWrapperMediatR.Core.Repositories;
-using MessageWrapperMediatR.Domain.Contracts;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 

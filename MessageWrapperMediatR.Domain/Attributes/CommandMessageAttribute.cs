@@ -1,4 +1,4 @@
-﻿namespace MessageWrapperMediatR.Domain.Attributes
+﻿namespace MessageWrapperMediatR.Core.Attributes
 {
     [AttributeUsage(AttributeTargets.Class)]
     public class CommandMessageAttribute : Attribute

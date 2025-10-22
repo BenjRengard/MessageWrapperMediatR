@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace MessageWrapperMediatR.Domain.Contracts
+namespace MessageWrapperMediatR.Core.Contracts
 {
     [DataContract]
     public class ActionResultContract

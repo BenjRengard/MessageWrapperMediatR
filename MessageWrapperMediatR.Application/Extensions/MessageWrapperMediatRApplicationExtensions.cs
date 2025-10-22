@@ -19,7 +19,6 @@ namespace MessageWrapperMediatR.Application.Extensions
 
         public static IServiceCollection AddMappers(this IServiceCollection services)
         {
-            //_ = services.AddAutoMapper(typeof(MessageWrapperMediatRApplicationExtensions).Assembly);
             services.AddAutoMapper(cfg => { }, typeof(MessageWrapperMediatRApplicationExtensions).Assembly);
             return services;
         }

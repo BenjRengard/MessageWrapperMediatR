@@ -1,6 +1,6 @@
-﻿using MessageWrapperMediatR.Core.Filters;
+﻿using MessageWrapperMediatR.Core.Contracts;
+using MessageWrapperMediatR.Core.Filters;
 using MessageWrapperMediatR.Core.Models;
-using MessageWrapperMediatR.Domain.Contracts;
 
 namespace MessageWrapperMediatR.Application.Services
 {

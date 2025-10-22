@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using MessageWrapperMediatR.Domain.Contracts;
+using MessageWrapperMediatR.Core.Contracts;
 
 namespace MessageWrapperMediatR.Application.Commands.MessageCollector
 {

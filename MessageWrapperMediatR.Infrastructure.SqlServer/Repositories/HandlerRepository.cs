@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace MessageWrapperMediatR.Infrastructure.SqlServer.Repositories
 {
+    ///<inheritdoc/>
     public class HandlerRepository : IHandlerRepository
     {
         private readonly DbContextOptions<MessageWrapperMeditaRDbContext> _options;
@@ -15,30 +16,35 @@ namespace MessageWrapperMediatR.Infrastructure.SqlServer.Repositories
             _options = configuration.GetSqlServerMessageWrapperOptions();
         }
 
+        ///<inheritdoc/>
         public async Task<List<Handler>> GetAllActiveHandlersAsync()
         {
             using var dbContext = new MessageWrapperMeditaRDbContext(_options);
             return await dbContext.Handlers.Include(h => h.Bindings).Where(c => c.IsActive == true).AsNoTracking().ToListAsync();
         }
 
+        ///<inheritdoc/>
         public async Task<List<Handler>> GetAllAsync()
         {
             using var dbContext = new MessageWrapperMeditaRDbContext(_options);
             return await dbContext.Handlers.Include(h => h.Bindings).AsNoTracking().ToListAsync();
         }
 
+        ///<inheritdoc/>
         public async Task<List<Handler>> GetAllInactiveHandlersAsync()
         {
             using var dbContext = new MessageWrapperMeditaRDbContext(_options);
             return await dbContext.Handlers.Include(h => h.Bindings).AsNoTracking().Where(c => c.IsActive == false).ToListAsync();
         }
 
+        ///<inheritdoc/>
         public async Task<Handler?> GetByIdAsync(string id)
         {
             using var dbContext = new MessageWrapperMeditaRDbContext(_options);
             return await dbContext.Handlers.Include(h => h.Bindings).AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
         }
 
+        ///<inheritdoc/>
         public async Task<bool> RemoveAsync(string id)
         {
             using var dbContext = new MessageWrapperMeditaRDbContext(_options);
@@ -53,6 +59,7 @@ namespace MessageWrapperMediatR.Infrastructure.SqlServer.Repositories
             return result;
         }
 
+        ///<inheritdoc/>
         public async Task<Handler?> UpdateAsync(string id, bool isActive)
         {
             using var dbContext = new MessageWrapperMeditaRDbContext(_options);
@@ -65,6 +72,7 @@ namespace MessageWrapperMediatR.Infrastructure.SqlServer.Repositories
             return handler;
         }
 
+        ///<inheritdoc/>
         public async Task<Handler> UpsertAsync(Handler handlerRequest)
         {
             using var dbContext = new MessageWrapperMeditaRDbContext(_options);

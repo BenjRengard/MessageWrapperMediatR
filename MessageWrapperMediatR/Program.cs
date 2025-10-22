@@ -6,6 +6,7 @@ using MessageWrapperMediatR.Infrastructure.MessageBus;
 using MessageWrapperMediatR.Infrastructure.RabbitMq;
 using MessageWrapperMediatR.Infrastructure.IbmMqSeries;
 using MessageWrapperMediatR.Infrastructure.Kafka;
+using MessageWrapperMediatR.Infrastructure.SqlServer;
 
 var builder = WebApplication.CreateBuilder(args);
 IConfigurationRoot config = new ConfigurationBuilder()
@@ -20,11 +21,14 @@ builder.Services.AddSwaggerGen(options =>
     options.UseInlineDefinitionsForEnums();
 });
 builder.Services.AddControllers();
+
+// References du MessageWrapper.
 builder.Services.AddMessagingWithMediatR();
 builder.Services.AddPublisherServices(config);
-builder.Services.AddRabbitMqConfiguration(config); 
+builder.Services.AddRabbitMqConfiguration(config);
 builder.Services.AddIbmMqSeriesConfiguration(config);
 builder.Services.AddKafkaConfiguration(config);
+builder.Services.AddSqlServerMessageWrapper(config);
 builder.Services.AddMappers();
 
 

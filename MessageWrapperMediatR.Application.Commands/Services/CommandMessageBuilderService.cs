@@ -1,6 +1,6 @@
-﻿using MessageWrapperMediatR.Core.Config;
-using MessageWrapperMediatR.Domain.Attributes;
-using MessageWrapperMediatR.Domain.Contracts;
+﻿using MessageWrapperMediatR.Core.Attributes;
+using MessageWrapperMediatR.Core.Config;
+using MessageWrapperMediatR.Core.Contracts;
 using Microsoft.Extensions.Logging;
 using System.Reflection;
 

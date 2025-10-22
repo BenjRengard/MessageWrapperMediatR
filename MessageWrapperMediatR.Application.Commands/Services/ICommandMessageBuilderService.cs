@@ -1,4 +1,4 @@
-﻿using MessageWrapperMediatR.Domain.Contracts;
+﻿using MessageWrapperMediatR.Core.Contracts;
 
 namespace MessageWrapperMediatR.Application.Commands.Services
 {

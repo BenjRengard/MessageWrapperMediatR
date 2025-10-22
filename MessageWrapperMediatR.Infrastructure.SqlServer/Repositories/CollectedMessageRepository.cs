@@ -3,14 +3,10 @@ using MessageWrapperMediatR.Core.Models;
 using MessageWrapperMediatR.Core.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MessageWrapperMediatR.Infrastructure.SqlServer.Repositories
 {
+    ///<inheritdoc/>
     public class CollectedMessageRepository : ICollectedMessageRepository
     {
         private readonly DbContextOptions<MessageWrapperMeditaRDbContext> _options;
@@ -20,6 +16,7 @@ namespace MessageWrapperMediatR.Infrastructure.SqlServer.Repositories
             _options = configuration.GetSqlServerMessageWrapperOptions();
         }
 
+        ///<inheritdoc/>
         public async Task<CollectedMessage> AddCollectedMessageAsync(string messageContent, Handler handlerFrom)
         {
             using var dbContext = new MessageWrapperMeditaRDbContext(_options);
@@ -29,6 +26,7 @@ namespace MessageWrapperMediatR.Infrastructure.SqlServer.Repositories
             return message;
         }
 
+        ///<inheritdoc/>
         public async Task<bool> DeleteMessageByIdAsync(Guid messageId)
         {
             using var dbContext = new MessageWrapperMeditaRDbContext(_options);
@@ -42,6 +40,7 @@ namespace MessageWrapperMediatR.Infrastructure.SqlServer.Repositories
             return false;
         }
 
+        ///<inheritdoc/>
         public async Task DeleteMessagesAsync(List<CollectedMessage> messages)
         {
             using var dbContext = new MessageWrapperMeditaRDbContext(_options);
@@ -49,12 +48,14 @@ namespace MessageWrapperMediatR.Infrastructure.SqlServer.Repositories
             await dbContext.SaveChangesAsync();
         }
 
+        ///<inheritdoc/>
         public async Task<CollectedMessage> GetCollectedMessageByIdAsync(Guid messageId)
         {
             using var dbContext = new MessageWrapperMeditaRDbContext(_options);
             return await dbContext.CollectedMessages.AsNoTracking().FirstOrDefaultAsync(c => c.Id == messageId);
         }
 
+        ///<inheritdoc/>
         public async Task<PaginatedResponse<CollectedMessage>> GetCollectedMessagesAsync(
             List<string> queues,
             DateTimeOffset? receptionBegin,
@@ -95,6 +96,7 @@ namespace MessageWrapperMediatR.Infrastructure.SqlServer.Repositories
             };
         }
 
+        ///<inheritdoc/>
         public async Task<List<CollectedMessage>> GetMessagesToPurgeAsync(DateTimeOffset now)
         {
             using var dbContext = new MessageWrapperMeditaRDbContext(_options);
@@ -104,6 +106,7 @@ namespace MessageWrapperMediatR.Infrastructure.SqlServer.Repositories
                     .ToListAsync();
         }
 
+        ///<inheritdoc/>
         public async Task UpdateStatusOfCollectedMessagesAsync(IEnumerable<Guid> messagesIdsToUpdate, bool status = true)
         {
             using var dbContext = new MessageWrapperMeditaRDbContext(_options);

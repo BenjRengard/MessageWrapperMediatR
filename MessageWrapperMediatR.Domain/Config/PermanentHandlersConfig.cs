@@ -1,6 +1,6 @@
 ﻿using MessageWrapperMediatR.Core.Models;
 
-namespace MessageWrapperMediatR.Application
+namespace MessageWrapperMediatR.Core.Config
 {
     public class PermanentHandlersConfig
     {
